@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Turno - Cola Virtual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Outfit', sans-serif; background-color: #f8fafc; }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <header class="glass-header sticky top-0 z-50 px-6 py-4 flex justify-between items-center shadow-sm">
+        <div class="flex items-center gap-3">
+            <button class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-700" onclick="history.back()">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <h1 class="text-xl font-semibold text-gray-800">Tu Turno</h1>
+        </div>
+        <i class="fa-regular fa-bell text-gray-500 text-xl relative">
+            <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full"></span>
+        </i>
+    </header>
+
+    <main class="p-6 max-w-md mx-auto">
+        
+        <div class="bg-white rounded-3xl p-8 text-center shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-gray-100 relative overflow-hidden mb-8">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-orange-400 to-red-500"></div>
+            
+            <p class="text-gray-500 text-sm font-medium uppercase tracking-wider mb-2 mt-4">Estás en la posición</p>
+            <h2 class="text-7xl font-extrabold text-gray-800 tracking-tighter" th:text="${posicion}">3</h2>
+            <div class="inline-flex items-center justify-center gap-2 bg-orange-50 text-orange-600 px-4 py-2 rounded-full mt-4 font-medium text-sm">
+                <i class="fa-regular fa-clock"></i>
+                <span>~15 min de espera</span>
+            </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">¿Qué quieres hacer mientras esperas?</h3>
+        
+        <div class="grid grid-cols-2 gap-4">
+            <a href="/mesas" class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-3 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-blue-50 text-blue-500 rounded-full flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-chair"></i>
+                </div>
+                <span class="font-medium text-gray-700">Elegir Mesa</span>
+            </a>
+            
+            <a href="/personalizar" class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center gap-3 hover:shadow-md transition-shadow">
+                <div class="w-12 h-12 bg-red-50 text-red-500 rounded-full flex items-center justify-center text-xl">
+                    <i class="fa-solid fa-pizza-slice"></i>
+                </div>
+                <span class="font-medium text-gray-700">Adelantar Pedido</span>
+            </a>
+        </div>
+        
+    </main>
+
+</body>
+</html>

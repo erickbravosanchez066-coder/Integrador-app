@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-EsperaDigitalApplication<espera-digital>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.pizzeria.esperadigital.EsperaDigitalApplication",
+      "projectName": "espera-digital",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
